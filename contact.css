@@ -1,0 +1,131 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at center, #3b1d6b 0%, #050414 60%, #000000 100%);
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 7vw;
+  backdrop-filter: blur(14px);
+}
+
+.nav-logo img {
+  width: 60px;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #d4d4ff;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff7ee5, #8e92ff);
+  transition: width 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* CARD */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  padding: 20px;
+}
+
+.contact-card {
+  width: 420px;
+  padding: 32px;
+  border-radius: 30px;
+  text-align: center;
+  background: #171133;
+  box-shadow:
+    0 24px 50px rgba(0,0,0,0.85),
+    0 0 30px rgba(168, 96, 255, 0.55);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover animation for contact card */
+.contact-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.9),
+    0 0 40px rgba(255,126,229,0.7);
+}
+
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  opacity: .8;
+  margin-bottom: 25px;
+}
+
+.contact-items .item {
+  margin-bottom: 20px;
+}
+
+.item h3 {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.item p a {
+  color: #ff8bf3;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.item p a:hover {
+  text-decoration: underline;
+}
+
+.credits {
+  margin-top: 35px;
+  opacity: .85;
+}
+
+.credits h2 {
+  font-size: 1.6rem;
+  background-image: linear-gradient(90deg,#ff7ee5,#8e92ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .contact-card { width: 90%; }
+}
